@@ -1,19 +1,24 @@
-from flask import Flask, request, abort
+from flask import Flask, request, abort, render_template
 from flask_sqlalchemy import SQLAlchemy
-import os
-
-from linebot import (
-    LineBotApi, WebhookHandler
-)
-from linebot.exceptions import (
-    InvalidSignatureError
-)
+from linebot import LineBotApi, WebhookHandler
+from linebot.exceptions import InvalidSignatureError
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,
+        MessageEvent, 
+        TextMessage, 
+        TextSendMessage, 
+        StickerMessage, A
+        ConfirmTemplate,
+        MessageAction,
+        TemplateSendMessage
 )
+from copy import deepcopy
+from datetime import datetime
+import os
+import random
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+db = SQLAlchemy(app)
 LINE_CHANNEL_ACCESS_TOKEN = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
 LINE_CHANNEL_SECRET = os.environ["LINE_CHANNEL_SECRET"]
 
