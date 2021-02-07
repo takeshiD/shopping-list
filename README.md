@@ -1,6 +1,8 @@
-# shopping-list
-line-botのお買い物リストです
+# Shopping-List
+line-botのお買い物リストです。  
 herokuで動かしてます。
+
+![お買いものリストの友だち追加QRコード](https://github.com/takeshiD/shopping-list/image/qr.png)
 
 # 特徴
 * 個人、ルーム、グループで使える  
