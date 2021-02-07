@@ -6,7 +6,7 @@ from linebot.models import (
         MessageEvent, 
         TextMessage, 
         TextSendMessage, 
-        StickerMessage, A
+        StickerMessage,
         ConfirmTemplate,
         MessageAction,
         TemplateSendMessage
